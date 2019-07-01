@@ -1,13 +1,18 @@
 workflow "Fix Documentation" {
   on = "push"
   resolves = [
-    "Document Package"
+    "Document Package",
+    "Shell"
   ]
 }
 
 action "Install Dependencies" {
   uses = "r-lib/ghactions/actions/install-deps@d8aac3d7d90a9a867fa09b133b982aa32f9255ba"
-  runs = "Rscript -e 'Sys.getenv(`R_LIBS_WORKFLOW`)'"
+}
+
+action "Shell" {
+  uses = "actions/bin/sh@master"
+  args = ["git remote -v"]
 }
 
 action "Document Package" {
