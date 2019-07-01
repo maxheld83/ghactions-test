@@ -10,6 +10,7 @@ workflow "Fix Documentation" {
 action "Install Dependencies" {
   uses = "r-lib/ghactions/actions/install-deps@56685442678626eabaaf99b711ff2c505128f4e1"
   needs = "remote"
+  runs = "echo foo"
 }
 
 action "remote" {
@@ -23,7 +24,7 @@ action "status" {
 }
 
 action "Document Package" {
-  uses = "r-lib/ghactions/actions/document@56685442678626eabaaf99b711ff2c505128f4e1"
+  uses = "r-lib/ghactions/actions/document@51862fb28a3812291c7cf100a49fbf6dec10795b"
   needs = [
     "Install Dependencies"
   ]
