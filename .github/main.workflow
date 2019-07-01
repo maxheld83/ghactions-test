@@ -14,12 +14,12 @@ action "Install Dependencies" {
 
 action "remote" {
   uses = "r-lib/ghactions/actions/document@d8aac3d7d90a9a867fa09b133b982aa32f9255ba"
-  runs = ["git remote -v"]
+  runs = "git remote -v"
 }
 
 action "status" {
   uses = "r-lib/ghactions/actions/document@d8aac3d7d90a9a867fa09b133b982aa32f9255ba"
-  runs = ["git status -v"]
+  runs = "git status -v"
 }
 
 action "Document Package" {
