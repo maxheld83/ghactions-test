@@ -12,13 +12,13 @@ action "Install Dependencies" {
 }
 
 action "remote" {
-  uses = "actions/bin/sh@master"
-  args = ["git remote -v"]
+  uses = "r-lib/ghactions/actions/document@d8aac3d7d90a9a867fa09b133b982aa32f9255ba"
+  runs = ["git remote -v"]
 }
 
 action "status" {
-  uses = "actions/bin/sh@master"
-  args = ["git status -v"]
+  uses = "r-lib/ghactions/actions/document@d8aac3d7d90a9a867fa09b133b982aa32f9255ba"
+  runs = ["git status -v"]
 }
 
 action "Document Package" {
