@@ -15,4 +15,10 @@ action "Document Package" {
   needs = [
     "Install Dependencies"
   ]
+  args = [
+    "--after-code=commit"
+  ]
+  secrets = [
+    "GITHUB_TOKEN"
+  ]
 }
