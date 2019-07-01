@@ -6,12 +6,12 @@ workflow "Fix Documentation" {
 }
 
 action "Install Dependencies" {
-  uses = "r-lib/ghactions/actions/install-deps@1c8610d14de1377b1bfedf97a0f18b52132a4949"
+  uses = "r-lib/ghactions/actions/install-deps@23e7d1306de7b1688ba6a72a89aeed1f049e9d2a"
   runs = "Rscript -e 'Sys.getenv(`R_LIBS_WORKFLOW`)'"
 }
 
 action "Document Package" {
-  uses = "r-lib/ghactions/actions/document@1c8610d14de1377b1bfedf97a0f18b52132a4949"
+  uses = "r-lib/ghactions/actions/document@23e7d1306de7b1688ba6a72a89aeed1f049e9d2a"
   needs = [
     "Install Dependencies"
   ]
