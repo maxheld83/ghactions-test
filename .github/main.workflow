@@ -19,7 +19,7 @@ action "remote" {
 
 action "status" {
   uses = "r-lib/ghactions/actions/document@56685442678626eabaaf99b711ff2c505128f4e1"
-  runs = "git branch -a"
+  runs = "ls /github/home"
 }
 
 action "Document Package" {
