@@ -8,22 +8,22 @@ workflow "Fix Documentation" {
 }
 
 action "Install Dependencies" {
-  uses = "r-lib/ghactions/actions/install-deps@d8aac3d7d90a9a867fa09b133b982aa32f9255ba"
+  uses = "r-lib/ghactions/actions/install-deps@56685442678626eabaaf99b711ff2c505128f4e1"
   needs = "remote"
 }
 
 action "remote" {
-  uses = "r-lib/ghactions/actions/document@d8aac3d7d90a9a867fa09b133b982aa32f9255ba"
+  uses = "r-lib/ghactions/actions/document@56685442678626eabaaf99b711ff2c505128f4e1"
   runs = "git remote -v"
 }
 
 action "status" {
-  uses = "r-lib/ghactions/actions/document@d8aac3d7d90a9a867fa09b133b982aa32f9255ba"
+  uses = "r-lib/ghactions/actions/document@56685442678626eabaaf99b711ff2c505128f4e1"
   runs = "git status -v"
 }
 
 action "Document Package" {
-  uses = "r-lib/ghactions/actions/document@d8aac3d7d90a9a867fa09b133b982aa32f9255ba"
+  uses = "r-lib/ghactions/actions/document@56685442678626eabaaf99b711ff2c505128f4e1"
   needs = [
     "Install Dependencies"
   ]
