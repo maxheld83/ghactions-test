@@ -1,30 +1,16 @@
 workflow "Fix Documentation" {
   on = "push"
   resolves = [
-    "Document Package",
-    "remote",
-    "status"
+    "Document Package"
   ]
 }
 
 action "Install Dependencies" {
-  uses = "r-lib/ghactions/actions/install-deps@56685442678626eabaaf99b711ff2c505128f4e1"
-  needs = "remote"
-  runs = ["sh", "-c", "ls $R_LIBS_DEV_HELPERS"]
-}
-
-action "remote" {
-  uses = "r-lib/ghactions/actions/document@56685442678626eabaaf99b711ff2c505128f4e1"
-  runs = "ls -a /"
-}
-
-action "status" {
-  uses = "r-lib/ghactions/actions/document@56685442678626eabaaf99b711ff2c505128f4e1"
-  runs = "ls -a /github/home"
+  uses = "r-lib/ghactions/actions/install-deps@e3996339bf3364fb8e78b605c4ce6231adad9cba"
 }
 
 action "Document Package" {
-  uses = "r-lib/ghactions/actions/document@51862fb28a3812291c7cf100a49fbf6dec10795b"
+  uses = "r-lib/ghactions/actions/document@e3996339bf3364fb8e78b605c4ce6231adad9cba"
   needs = [
     "Install Dependencies"
   ]
